@@ -70,7 +70,7 @@ The node trajectory_publisher_saver.py:
 It provides a ROS 2 service named /save_trajectory which allows you to save the trajectory of the robot from a specified number of seconds in the past.
 📦 Service: TimeInSec.srv
 
-    Request: float32 time_sec
+    Request: int32 time_sec
 
     Saves to:
     /home/asd/ros2_ws7/trajectories/trajectory_<timestamp>_<duration>s.csv
