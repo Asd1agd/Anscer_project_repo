@@ -49,7 +49,7 @@ sudo apt install ros-humble-gazebo-ros-pkgs \
 
 Set your TurtleBot3 model before running any launch files:
 
-export TURTLEBOT3_MODEL=burger
+export TURTLEBOT3_MODEL=waffle
 
 🔧 Clone and Build the Project
 
