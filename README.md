@@ -28,33 +28,28 @@ cd Anscer_project_repo/ros2_ws7
 colcon build
 source install/setup.bash
 
-🧩 Project Structure
-
-Anscer_project_repo/
-├── ros2_ws7/
-│   ├── src/
-│   │   └── bring_up_anscer/
-│   │       ├── launch/
-│   │       │   └── combined.launch.xml
-│   │       ├── package.xml
-│   │       └── CMakeLists.txt
-│   ├── install/
-│   └── README.md
 
 📽️ Running the Simulation
 
 Open three separate terminals and execute the following commands:
 🧠 Terminal 1 – Bring up all Anscer services and nodes:
 
+```bash
 ros2 launch bring_up_anscer combined.launch.xml
+```
+
 
 🌍 Terminal 2 – Launch Gazebo with TurtleBot3 world:
 
+```bash
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
 
 🗺️ Terminal 3 – Launch Navigation Stack:
 
+```bash
 ros2 launch turtlebot3_navigation2 navigation2.launch.py
+```
 
 Once all nodes are launched, your project will simulate the robot and visualize/save its trajectory in RViz2.
 🧠 Functionality
