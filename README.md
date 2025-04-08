@@ -16,7 +16,7 @@ Before launching the project, make sure the following packages and tools are **p
 
 > ✅ Don’t forget to set the TurtleBot3 model:
 ```bash
-export TURTLEBOT3_MODEL=burger
+export TURTLEBOT3_MODEL=waffle
 ```
 
 
