@@ -73,23 +73,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
 ros2 launch turtlebot3_navigation2 navigation2.launch.py
 
-📌 Project Features
-
-    Combined Launch File: Brings up multiple components (e.g., robot state publisher, sensors, nodes) in one go.
-
-    Gazebo Simulation: Integrates a TurtleBot3 in a simulated world for testing and development.
-
-    Autonomous Navigation: Uses Nav2 stack to enable mapping, localization, and path planning.
-
-    Visualization: RViz2 shows robot pose, trajectory, sensor data, and maps in real-time.
 
 👨‍💻 Maintainer
 
 Maintained by Asd1agd and contributors.
-📄 License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-
-Let me know if you want me to generate a badge section, include sample images/gifs, or auto-generate a `LICENSE` file too!
 
