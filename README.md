@@ -2,9 +2,6 @@
 
 This repository contains the **Anscer Project**, developed and maintained in the `ros2_ws7` workspace. It is currently saved and tracked under the `master` branch.
 
-## 📁 Project Structure
-
-- **ros2_ws7/**: Main ROS 2 workspace containing all source code, packages, and launch files.
 
 ## 🚀 Getting Started
 
@@ -72,6 +69,7 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 🧭 Terminal 3: Launch Navigation2
 
 ros2 launch turtlebot3_navigation2 navigation2.launch.py
+
 
 
 👨‍💻 Maintainer
