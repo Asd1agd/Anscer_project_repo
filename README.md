@@ -12,6 +12,7 @@ This repository contains the **Anscer Project**, developed and maintained in the
 ```bash
 git clone git@github.com:Asd1agd/Anscer_project_repo.git
 cd Anscer_project_repo/ros2_ws7
+```
 
 Sure! Here's your README.md content formatted properly in Markdown, ready to be copy-pasted into your README.md file:
 
