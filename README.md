@@ -1,23 +1,24 @@
-🧠 Anscer Project
+# 🧠 Anscer Project
 
-This repository contains the Anscer Project, a robot simulation and trajectory visualization system using ROS 2, Gazebo, and RViz2. It is built in the ros2_ws7 workspace and currently tracked under the master branch.
-📦 Dependencies
+This repository contains the **Anscer Project**, a robot simulation and trajectory visualization system using ROS 2, Gazebo, and RViz2. It is built in the `ros2_ws7` workspace and currently tracked under the `master` branch.
 
-Before launching the project, make sure the following packages and tools are pre-installed:
+---
 
-    ROS 2 Humble
+## 📦 Dependencies
 
-    Gazebo (with TurtleBot3 world support)
+Before launching the project, make sure the following packages and tools are **pre-installed**:
 
-    RViz2
+- **ROS 2 Humble**
+- **Gazebo** (with TurtleBot3 world support)
+- **RViz2**
+- `turtlebot3_gazebo`
+- `turtlebot3_navigation2`
 
-    turtlebot3_gazebo
-
-    turtlebot3_navigation2
-
-    ✅ Make sure to source your ROS 2 environment and set the TurtleBot3 model:
-
+> ✅ Don’t forget to set the TurtleBot3 model:
+```bash
 export TURTLEBOT3_MODEL=burger
+```
+
 
 🚀 Getting Started
 Clone the Repository
@@ -55,56 +56,67 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
 ros2 launch turtlebot3_navigation2 navigation2.launch.py
 
-Once all nodes are launched, your project will visualize and save the robot's trajectory in RViz2.
+Once all nodes are launched, your project will simulate the robot and visualize/save its trajectory in RViz2.
 🧠 Functionality
 🛤️ Real-time Trajectory Saving (Service 1)
 
-The node trajectory_publisher_saver.py subscribes to /odom, saves the robot's path in real-time, and publishes:
+The node trajectory_publisher_saver.py:
 
-    Line Strip markers
+    Subscribes to /odom
 
-    Arrow markers representing heading
+    Continuously saves position and orientation data
 
-It provides a ROS 2 service save_trajectory where you can specify how many seconds back you want the path saved.
-📦 Service Request Format:
+    Publishes:
 
-    Type: TimeInSec.srv
+        Line Strip markers (path trace)
 
-    Request field: float32 time_sec
+        Arrow markers (heading direction)
 
-A CSV file gets saved at:
+It provides a ROS 2 service named /save_trajectory which allows you to save the trajectory of the robot from a specified number of seconds in the past.
+📦 Service: TimeInSec.srv
 
-/home/asd/ros2_ws7/trajectories/trajectory_<timestamp>_<duration>s.csv
+    Request: float32 time_sec
 
-📈 Trajectory Loading and Visualization (Service 2)
+    Saves to:
+    /home/asd/ros2_ws7/trajectories/trajectory_<timestamp>_<duration>s.csv
 
-The node trajectory_visualizer.py offers a service named load_trajectory_csv that takes a file path to a saved CSV and publishes its contents as:
+📈 Load and Visualize Saved Trajectories (Service 2)
 
-    A Line Strip
+The node trajectory_visualizer.py:
 
-    Directional Arrows
+    Loads CSV files saved using the previous service
 
-This is useful for analyzing past paths, debugging, or evaluating navigation performance.
-📦 Service Request Format:
+    Publishes trajectory data as:
 
-    Type: CsvPath.srv
+        A Line Strip
 
-    Request field: string filepath
+        Directional Arrows (heading)
 
-Once loaded, markers are continuously published on the topic /loaded_trajectory_markers.
+Useful for:
+
+    Playback of previous routes
+
+    Evaluation
+
+    Debugging
+
+📦 Service: CsvPath.srv
+
+    Request: string filepath
+
+    Publishes to: /loaded_trajectory_markers
+
 📂 Trajectory CSV Format
 
 Each saved CSV includes:
 
 time_sec,x,y,z,w
-1612381835.23,1.23,0.45,0.00,[0.0, 0.0, 0.0, 1.0]
+1612381835.23,1.23,0.45,0.00,1.00
 ...
 
-Where:
+    x, y, z: Position
 
-    x, y, z = Position
-
-    w = Orientation quaternion [x, y, z, w]
+    w: Orientation (quaternion)
 
 🙋 Support
 
